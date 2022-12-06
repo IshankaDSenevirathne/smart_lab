@@ -47,7 +47,7 @@ export default function SendEmail() {
 						Full Name
 					</label>
 					<input
-						className="rounded-md p-2 border"
+						className="rounded-sm p-2 border"
 						onChange={(e) => setName(e.target.value)}
 						type="text"
 						name="name"
@@ -61,7 +61,7 @@ export default function SendEmail() {
 						Mobile No
 					</label>
 					<input
-						className="rounded-md p-2 border"
+						className="rounded-sm p-2 border"
 						onChange={(e) => setMobile(e.target.value)}
 						type="number"
 						name="mobile"
@@ -72,7 +72,7 @@ export default function SendEmail() {
 						Email
 					</label>
 					<input
-						className="rounded-md p-2 border"
+						className="rounded-sm p-2 border"
 						onChange={(e) => setEmail(e.target.value)}
 						type="email"
 						name="email"
@@ -87,7 +87,7 @@ export default function SendEmail() {
 					</label>
 					<textarea
 						name="requirements"
-						className="resize-none h-40 rounded-md p-2 border"
+						className="resize-none h-40 rounded-sm p-2 border"
 						onChange={(e) => setRequirements(e.target.value)}
 					/>
 				</formgroup>
@@ -99,7 +99,7 @@ export default function SendEmail() {
 						Budget
 					</label>
 					<input
-						className="rounded-md p-2 border"
+						className="rounded-sm p-2 border"
 						onChange={(e) => setBudget(e.target.value)}
 						type="number"
 						name="budget"
