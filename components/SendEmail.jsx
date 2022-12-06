@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { SuccessAlert } from './Alert';
 
 export default function SendEmail() {
 	//state values for user inputs
@@ -9,6 +10,7 @@ export default function SendEmail() {
 	const [requirements, setRequirements] = useState('');
 	const [budget, setBudget] = useState('');
 	const [submitted, setSubmitted] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 
 	//handle sending email
 	const handleSubmit = (e) => {
@@ -21,22 +23,23 @@ export default function SendEmail() {
 			budget,
 		};
 
-		axios
-			.post('/api/send-email', data)
-			.then(function (response) {
-				if (response.status == 200) {
-					console.log('Success : ', response);
-					setSubmitted(true);
-					setName('');
-					setEmail('');
-					setMobile('');
-					setRequirements('');
-					setBudget('');
-				}
-			})
-			.catch(function (error) {
-				console.log('error : ', error);
-			});
+		// axios
+		// 	.post('/api/send-email', data)
+		// 	.then(function (response) {
+		// 		if (response.status == 200) {
+		// 			console.log('Success : ', response);
+		// 			setSubmitted(true);
+		// 			setName('');
+		// 			setEmail('');
+		// 			setMobile('');
+		// 			setRequirements('');
+		// 			setBudget('');
+		// 		}
+		// 	})
+		// 	.catch(function (error) {
+		// 		console.log('error : ', error);
+		// 	});
+		setIsOpen(true);
 	};
 
 	return (
@@ -115,6 +118,7 @@ export default function SendEmail() {
 					</button>
 				</div>
 			</form>
+			<SuccessAlert isOpen={isOpen} setIsOpen={setIsOpen} />
 		</div>
 	);
 }
