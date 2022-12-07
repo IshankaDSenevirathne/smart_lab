@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Link from 'next/link';
 export default function Nav() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -9,38 +9,38 @@ export default function Nav() {
 				<div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
 					<ul className="flex items-center hidden space-x-8 lg:flex">
 						<li>
-							<a
-								href="/"
+							<Link
+								to="/"
 								aria-label="Our product"
 								title="Our product"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Product
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="/"
+							<Link
+								to="/"
 								aria-label="Our product"
 								title="Our product"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Features
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="/"
+							<Link
+								to="/"
 								aria-label="Product pricing"
 								title="Product pricing"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Pricing
-							</a>
+							</Link>
 						</li>
 					</ul>
-					<a
-						href="/"
+					<Link
+						to="/"
 						aria-label="Company"
 						title="Company"
 						className="inline-flex items-center lg:mx-auto"
@@ -63,7 +63,7 @@ export default function Nav() {
 						<span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
 							SMART LAB
 						</span>
-					</a>
+					</Link>
 					<div className="ml-auto lg:hidden z-50">
 						<button
 							aria-label="Open Menu"
@@ -94,8 +94,8 @@ export default function Nav() {
 								<div className="p-5 bg-white border rounded shadow-sm">
 									<div className="flex items-center justify-between mb-4">
 										<div>
-											<a
-												href="/"
+											<Link
+												to="/"
 												aria-label="Company"
 												title="Company"
 												className="inline-flex items-center"
@@ -138,7 +138,7 @@ export default function Nav() {
 												<span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
 													SMART LAB
 												</span>
-											</a>
+											</Link>
 										</div>
 										<div>
 											<button
@@ -164,34 +164,34 @@ export default function Nav() {
 									<nav>
 										<ul className="space-y-4">
 											<li>
-												<a
-													href="/"
+												<Link
+													to="/"
 													aria-label="Our product"
 													title="Our product"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
 												>
 													Product
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a
-													href="/"
+												<Link
+													to="/"
 													aria-label="Our product"
 													title="Our product"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
 												>
 													Features
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a
-													href="/"
+												<Link
+													to="/"
 													aria-label="Product pricing"
 													title="Product pricing"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
 												>
 													Pricing
-												</a>
+												</Link>
 											</li>
 										</ul>
 									</nav>
