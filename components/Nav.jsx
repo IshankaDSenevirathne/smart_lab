@@ -4,7 +4,7 @@ export default function Nav() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<div className="bg-white border-b border-gray-200">
+		<div className="bg-white border-b border-gray-200 z-50">
 			<div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				<div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
 					<ul className="flex items-center hidden space-x-8 lg:flex">
@@ -64,7 +64,7 @@ export default function Nav() {
 							SMART LAB
 						</span>
 					</a>
-					<div className="ml-auto lg:hidden">
+					<div className="ml-auto lg:hidden z-50">
 						<button
 							aria-label="Open Menu"
 							title="Open Menu"

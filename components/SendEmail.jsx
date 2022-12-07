@@ -66,6 +66,7 @@ export default function SendEmail() {
 						type="text"
 						name="name"
 						value={name}
+						required
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -81,6 +82,7 @@ export default function SendEmail() {
 						type="text"
 						name="organization"
 						value={organization}
+						required
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -96,6 +98,7 @@ export default function SendEmail() {
 						type="number"
 						name="mobile"
 						value={mobile}
+						required
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -108,6 +111,7 @@ export default function SendEmail() {
 						type="email"
 						name="email"
 						value={email}
+						required
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -122,6 +126,7 @@ export default function SendEmail() {
 						className="resize-none h-40 rounded-sm p-2 border"
 						onChange={(e) => setRequirements(e.target.value)}
 						value={requirements}
+						required
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -137,6 +142,7 @@ export default function SendEmail() {
 						type="number"
 						name="budget"
 						value={budget}
+						required
 					/>
 				</formgroup>
 				<div className="w-full flex justify-center py-10">

@@ -13,7 +13,7 @@ export default function Header() {
 				<img
 					className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
 					src="https://images.unsplash.com/photo-1605781573960-d12a0d37b2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-					alt=""
+					alt="Landing Page Banner Image"
 				/>
 			</div>
 			<div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
