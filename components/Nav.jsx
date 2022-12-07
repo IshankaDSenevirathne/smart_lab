@@ -4,7 +4,7 @@ export default function Nav() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<div class="bg-gray-900">
+		<div class="bg-stone-200">
 			<div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				<div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
 					<ul class="flex items-center hidden space-x-8 lg:flex">
@@ -13,7 +13,7 @@ export default function Nav() {
 								href="/"
 								aria-label="Our product"
 								title="Our product"
-								class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+								class="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Product
 							</a>
@@ -23,7 +23,7 @@ export default function Nav() {
 								href="/"
 								aria-label="Our product"
 								title="Our product"
-								class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+								class="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Features
 							</a>
@@ -33,7 +33,7 @@ export default function Nav() {
 								href="/"
 								aria-label="Product pricing"
 								title="Product pricing"
-								class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+								class="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
 							>
 								Pricing
 							</a>
@@ -60,32 +60,10 @@ export default function Nav() {
 							<rect x="14" y="1" width="7" height="6" />
 							<rect x="14" y="11" width="7" height="12" />
 						</svg>
-						<span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-							Company
+						<span class="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
+							SMART LAB
 						</span>
 					</a>
-					<ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
-						<li>
-							<a
-								href="/"
-								aria-label="Sign in"
-								title="Sign in"
-								class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-							>
-								Sign in
-							</a>
-						</li>
-						<li>
-							<a
-								href="/"
-								class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-								aria-label="Sign up"
-								title="Sign up"
-							>
-								Sign up
-							</a>
-						</li>
-					</ul>
 					<div class="ml-auto lg:hidden">
 						<button
 							aria-label="Open Menu"
@@ -154,8 +132,8 @@ export default function Nav() {
 														height="12"
 													/>
 												</svg>
-												<span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-													Company
+												<span class="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
+													SMART LAB
 												</span>
 											</a>
 										</div>
@@ -210,26 +188,6 @@ export default function Nav() {
 													class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
 												>
 													Pricing
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="Sign in"
-													title="Sign in"
-													class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Sign in
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-													aria-label="Sign up"
-													title="Sign up"
-												>
-													Sign up
 												</a>
 											</li>
 										</ul>

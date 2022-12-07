@@ -1,46 +1,60 @@
-import axios from 'axios';
 import { useState } from 'react';
-import { SuccessAlert } from './Alert';
+import { Alert } from './Alert';
 
 export default function SendEmail() {
 	//state values for user inputs
 	const [name, setName] = useState('');
+	const [organization, setOrganization] = useState('');
 	const [email, setEmail] = useState('');
 	const [mobile, setMobile] = useState('');
 	const [requirements, setRequirements] = useState('');
 	const [budget, setBudget] = useState('');
-	const [submitted, setSubmitted] = useState(false);
+	const [status, setStatus] = useState('');
+	const [msg, setMsg] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 
 	//handle sending email
-	const handleSubmit = (e) => {
+	async function handleSubmit(e) {
 		e.preventDefault();
 		let data = {
 			name,
 			mobile,
 			email,
 			requirements,
+			organization,
 			budget,
 		};
 
-		// axios
-		// 	.post('/api/send-email', data)
-		// 	.then(function (response) {
-		// 		if (response.status == 200) {
-		// 			console.log('Success : ', response);
-		// 			setSubmitted(true);
-		// 			setName('');
-		// 			setEmail('');
-		// 			setMobile('');
-		// 			setRequirements('');
-		// 			setBudget('');
-		// 		}
-		// 	})
-		// 	.catch(function (error) {
-		// 		console.log('error : ', error);
-		// 	});
-		setIsOpen(true);
-	};
+		await fetch('/api/contact', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+		}).then((res) => {
+			if (!res.ok) {
+				setStatus('error');
+				setMsg('Failed to send emai!');
+				setIsOpen(true);
+				setName('');
+				setOrganization('');
+				setEmail('');
+				setMobile('');
+				setRequirements('');
+				setBudget('');
+			}
+			setStatus('success');
+			setMsg('Email has been sent successfully!');
+			setIsOpen(true);
+			setName('');
+			setOrganization('');
+			setEmail('');
+			setMobile('');
+			setRequirements('');
+			setBudget('');
+		});
+	}
 
 	return (
 		<div className="my-20 p-5 bg-white rounded-md shadow-md">
@@ -54,6 +68,20 @@ export default function SendEmail() {
 						onChange={(e) => setName(e.target.value)}
 						type="text"
 						name="name"
+					/>
+				</formgroup>
+				<formgroup className="flex flex-col">
+					<label
+						className="text-lg py-2 text-black "
+						htmlFor="organization"
+					>
+						Organization Name
+					</label>
+					<input
+						className="rounded-sm p-2 border"
+						onChange={(e) => setOrganization(e.target.value)}
+						type="text"
+						name="organization"
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -118,7 +146,14 @@ export default function SendEmail() {
 					</button>
 				</div>
 			</form>
-			<SuccessAlert isOpen={isOpen} setIsOpen={setIsOpen} />
+			<Alert
+				status={status}
+				msg={msg}
+				isOpen={isOpen}
+				setIsOpen={setIsOpen}
+				setMsg={setMsg}
+				setStatus={setStatus}
+			/>
 		</div>
 	);
 }

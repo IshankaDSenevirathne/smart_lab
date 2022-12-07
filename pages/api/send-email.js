@@ -1,40 +1,64 @@
-export default function (req, res) {
-	let nodemailer = require('nodemailer');
-	const transporter = nodemailer.createTransport({
-		port: 465,
-		host: 'smtp.gmail.com',
-		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.PASSWORD,
-		},
-		secure: true,
-	});
-	const mailData = {
-		from: req.body.email,
-		to: `${process.env.EMAIL}`,
-		subject: `Message from ${req.body.name}, Smart Lab`,
-		html: `
-            <div>
-                <p>Full Name</p>
-                <p>${req.body.name}</p>
-                <p>Mobile No</p>
-                <p>${req.body.mobile}</p>
-                <p>Email</p>
-                <p>${req.body.email}</p>
-                <p>Requirements</p>
-                <p>${req.body.requirements}</p>
-                <p>Budget</p>
-                <p>${req.body.budget}</p>
-            </div>`,
-	};
-	transporter.sendMail(mailData, function (err, info) {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(info);
-		}
-		res.status(200);
-	});
+import nodemailer from 'nodemailer';
 
-	console.log(req.body);
-}
+const email = process.env.EMAIL;
+const password = process.env.PASSWORD;
+
+const handler = async (req, res) => {
+	if (req.method === 'POST') {
+		const data = req.body;
+		if (
+			!data ||
+			!data.name ||
+			!data.email ||
+			!data.requirements ||
+			!data.organization ||
+			!data.mobile ||
+			!data.budget
+		) {
+			return res.status(400).send({ message: 'Bad request' });
+		}
+		const transporter = nodemailer.createTransport({
+			service: 'gmail',
+			auth: {
+				user: email,
+				pass: password,
+			},
+		});
+		const mailOptions = {
+			from: req.body.email,
+			to: email,
+		};
+		const mailData = {
+			html: `
+				<div>
+					<p>Full Name</p>
+					<p>${req.body.name}</p>
+					<p>Full Name</p>
+					<p>${req.body.organization}</p>
+					<p>Mobile No</p>
+					<p>${req.body.mobile}</p>
+					<p>Email</p>
+					<p>${req.body.email}</p>
+					<p>Requirements</p>
+					<p>${req.body.requirements}</p>
+					<p>Budget</p>
+					<p>${req.body.budget}</p>
+				</div>`,
+		};
+		try {
+			await transporter.sendMail({
+				...mailOptions,
+				...mailData,
+				subject: `Message from ${data.name}, ${data.organization}`,
+			});
+
+			return res.status(200).json({ success: true });
+		} catch (err) {
+			console.log(err);
+			return res.status(400).json({ error: err.message });
+		}
+	}
+	return res.status(400).json({ message: 'Method not allowed!' });
+};
+
+export default handler;
