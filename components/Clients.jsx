@@ -15,8 +15,8 @@ export default function Clients() {
 						</p>
 						<p className="text-sm tracking-wide text-gray-800">
 							Pommy ipsum bent as a nine bob note naff off
-							biscuits nowt, a cuppa unhand me sir hadn't done it
-							in donkey's years sod's law.
+							biscuits nowt, a cuppa unhand me sir hadn&#39;t done
+							it in donkey&#39;s years sod&#39;s law.
 						</p>
 					</div>
 				</div>
