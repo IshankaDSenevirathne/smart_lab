@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Alert } from './Alert';
-
+import Spinner from '../components/util/Spinner';
 export default function SendEmail() {
 	//state values for user inputs
 	const [name, setName] = useState('');
@@ -12,6 +12,7 @@ export default function SendEmail() {
 	const [status, setStatus] = useState('');
 	const [msg, setMsg] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
 	//handle sending email
 	async function handleSubmit(e) {
@@ -24,8 +25,8 @@ export default function SendEmail() {
 			organization,
 			budget,
 		};
-
-		await fetch('/api/contact', {
+		setIsLoading(true);
+		await fetch('/api/send-email', {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {
@@ -33,20 +34,16 @@ export default function SendEmail() {
 				Accept: 'application/json',
 			},
 		}).then((res) => {
-			if (!res.ok) {
+			setIsLoading(false);
+			if (res.status === 200) {
+				setStatus('success');
+				setMsg('Email has been sent successfully!');
+				setIsOpen(true);
+			} else {
 				setStatus('error');
 				setMsg('Failed to send emai!');
 				setIsOpen(true);
-				setName('');
-				setOrganization('');
-				setEmail('');
-				setMobile('');
-				setRequirements('');
-				setBudget('');
 			}
-			setStatus('success');
-			setMsg('Email has been sent successfully!');
-			setIsOpen(true);
 			setName('');
 			setOrganization('');
 			setEmail('');
@@ -57,7 +54,7 @@ export default function SendEmail() {
 	}
 
 	return (
-		<div className="my-20 p-5 bg-white rounded-md shadow-md">
+		<div className="my-20 p-5 bg-white w-full max-w-screen-md rounded-md shadow-md">
 			<form className="flex flex-col gap-1 w-full">
 				<formgroup className="flex flex-col">
 					<label className="text-lg py-2 text-black " htmlFor="name">
@@ -68,6 +65,7 @@ export default function SendEmail() {
 						onChange={(e) => setName(e.target.value)}
 						type="text"
 						name="name"
+						value={name}
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -82,6 +80,7 @@ export default function SendEmail() {
 						onChange={(e) => setOrganization(e.target.value)}
 						type="text"
 						name="organization"
+						value={organization}
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -96,6 +95,7 @@ export default function SendEmail() {
 						onChange={(e) => setMobile(e.target.value)}
 						type="number"
 						name="mobile"
+						value={mobile}
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -107,6 +107,7 @@ export default function SendEmail() {
 						onChange={(e) => setEmail(e.target.value)}
 						type="email"
 						name="email"
+						value={email}
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -120,6 +121,7 @@ export default function SendEmail() {
 						name="requirements"
 						className="resize-none h-40 rounded-sm p-2 border"
 						onChange={(e) => setRequirements(e.target.value)}
+						value={requirements}
 					/>
 				</formgroup>
 				<formgroup className="flex flex-col">
@@ -134,15 +136,22 @@ export default function SendEmail() {
 						onChange={(e) => setBudget(e.target.value)}
 						type="number"
 						name="budget"
+						value={budget}
 					/>
 				</formgroup>
 				<div className="w-full flex justify-center py-10">
 					<button
-						className=" px-5 py-2 border border-white hover:text-red-500 text-white hover:bg-red-100 duration-300 delay-10 hover:border hover:border-red-200 bg-red-400 text-lg w-fit rounded-md"
+						className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-300 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
 						onClick={(e) => handleSubmit(e)}
 						type="submit"
 					>
-						Send
+						{isLoading ? (
+							<span className="flex items-center gap-2 justify-center">
+								<Spinner /> <p>Loading...</p>
+							</span>
+						) : (
+							'Send'
+						)}
 					</button>
 				</div>
 			</form>
@@ -151,8 +160,6 @@ export default function SendEmail() {
 				msg={msg}
 				isOpen={isOpen}
 				setIsOpen={setIsOpen}
-				setMsg={setMsg}
-				setStatus={setStatus}
 			/>
 		</div>
 	);

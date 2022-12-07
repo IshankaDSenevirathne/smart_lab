@@ -12,7 +12,7 @@ export default function Header() {
 				</svg>
 				<img
 					className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-					src="https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+					src="https://images.unsplash.com/photo-1605781573960-d12a0d37b2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 					alt=""
 				/>
 			</div>

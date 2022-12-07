@@ -1,7 +1,7 @@
 import { Transition, Dialog } from '@headlessui/react';
 import { Fragment } from 'react';
 
-export function Alert({ isOpen, setIsOpen, status, setStatus, msg, setMsg }) {
+export function Alert({ isOpen, setIsOpen, status, msg }) {
 	return (
 		<Transition appear show={isOpen} as={Fragment}>
 			<Dialog
@@ -9,8 +9,6 @@ export function Alert({ isOpen, setIsOpen, status, setStatus, msg, setMsg }) {
 				className="relative z-50"
 				onClose={() => {
 					setIsOpen(false);
-					setStatus('');
-					setMsg('');
 				}}
 			>
 				<Transition.Child
@@ -45,8 +43,8 @@ export function Alert({ isOpen, setIsOpen, status, setStatus, msg, setMsg }) {
 							leaveFrom="opacity-100 scale-100"
 							leaveTo="opacity-0 scale-95"
 						>
-							<Dialog.Panel className="flex text-base text-left transform transition shadow-2xl sm:inline-block sm:max-w-xl md:max-w-2xl md:mx-4 sm:align-middle lg:max-w-7xl">
-								<div className="flex flex-col justify-center px-5 py-4 bg-white rounded-md shadow-2xl w-screen sm:w-fit">
+							<Dialog.Panel className="flex text-base text-left transform transition shadow-2xl sm:inline-block">
+								<div className="flex flex-col justify-center px-5 py-4 bg-white rounded-md shadow-2xl w-screen sm:w-[500px]">
 									<h1
 										className={`text-3xl font-bold flex items-center gap-2 uppercase ${
 											status == 'success'
@@ -95,8 +93,6 @@ export function Alert({ isOpen, setIsOpen, status, setStatus, msg, setMsg }) {
 											className=" px-5 py-2 border border-white hover:text-gray-500 text-gray-900 hover:bg-gray-100 duration-300 delay-10 hover:border hover:border-gray-200 bg-gray-200 text-md w-fit rounded-md"
 											onClick={(e) => {
 												setIsOpen(false);
-												setStatus('');
-												setMsg('');
 											}}
 											type="submit"
 										>

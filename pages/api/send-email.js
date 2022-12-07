@@ -15,7 +15,9 @@ const handler = async (req, res) => {
 			!data.mobile ||
 			!data.budget
 		) {
-			return res.status(400).send({ message: 'Bad request' });
+			return res
+				.status(400)
+				.send({ message: 'Fill in all required fields!' });
 		}
 		const transporter = nodemailer.createTransport({
 			service: 'gmail',
@@ -25,24 +27,24 @@ const handler = async (req, res) => {
 			},
 		});
 		const mailOptions = {
-			from: req.body.email,
+			from: data.email,
 			to: email,
 		};
 		const mailData = {
 			html: `
 				<div>
 					<p>Full Name</p>
-					<p>${req.body.name}</p>
+					<p>${data.name}</p>
 					<p>Full Name</p>
-					<p>${req.body.organization}</p>
+					<p>${data.organization}</p>
 					<p>Mobile No</p>
-					<p>${req.body.mobile}</p>
+					<p>${data.mobile}</p>
 					<p>Email</p>
-					<p>${req.body.email}</p>
+					<p>${data.email}</p>
 					<p>Requirements</p>
-					<p>${req.body.requirements}</p>
+					<p>${data.requirements}</p>
 					<p>Budget</p>
-					<p>${req.body.budget}</p>
+					<p>${data.budget}</p>
 				</div>`,
 		};
 		try {
