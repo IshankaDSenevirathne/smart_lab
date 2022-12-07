@@ -10,7 +10,7 @@ export default function Nav() {
 					<ul className="flex items-center hidden space-x-8 lg:flex">
 						<li>
 							<Link
-								to="/"
+								href="/"
 								aria-label="Our product"
 								title="Our product"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
@@ -20,7 +20,7 @@ export default function Nav() {
 						</li>
 						<li>
 							<Link
-								to="/"
+								href="/"
 								aria-label="Our product"
 								title="Our product"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
@@ -30,7 +30,7 @@ export default function Nav() {
 						</li>
 						<li>
 							<Link
-								to="/"
+								href="/"
 								aria-label="Product pricing"
 								title="Product pricing"
 								className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
@@ -40,7 +40,7 @@ export default function Nav() {
 						</li>
 					</ul>
 					<Link
-						to="/"
+						href="/"
 						aria-label="Company"
 						title="Company"
 						className="inline-flex items-center lg:mx-auto"
@@ -95,7 +95,7 @@ export default function Nav() {
 									<div className="flex items-center justify-between mb-4">
 										<div>
 											<Link
-												to="/"
+												href="/"
 												aria-label="Company"
 												title="Company"
 												className="inline-flex items-center"
@@ -165,7 +165,7 @@ export default function Nav() {
 										<ul className="space-y-4">
 											<li>
 												<Link
-													to="/"
+													href="/"
 													aria-label="Our product"
 													title="Our product"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -175,7 +175,7 @@ export default function Nav() {
 											</li>
 											<li>
 												<Link
-													to="/"
+													href="/"
 													aria-label="Our product"
 													title="Our product"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -185,7 +185,7 @@ export default function Nav() {
 											</li>
 											<li>
 												<Link
-													to="/"
+													href="/"
 													aria-label="Product pricing"
 													title="Product pricing"
 													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"

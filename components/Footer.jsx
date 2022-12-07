@@ -5,7 +5,7 @@ export default function Footer() {
 			<div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
 				<div className="sm:col-span-2">
 					<Link
-						to="/"
+						href="/"
 						aria-label="Go home"
 						title="Company"
 						className="inline-flex items-center"
@@ -48,7 +48,7 @@ export default function Footer() {
 					<div className="flex">
 						<p className="mr-1 text-gray-800">Phone:</p>
 						<Link
-							to="tel:850-123-5021"
+							href="/"
 							aria-label="Our phone"
 							title="Our phone"
 							className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
@@ -59,7 +59,7 @@ export default function Footer() {
 					<div className="flex">
 						<p className="mr-1 text-gray-800">Email:</p>
 						<Link
-							to="mailto:info@lorem.mail"
+							href="/"
 							aria-label="Our email"
 							title="Our email"
 							className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
@@ -70,7 +70,7 @@ export default function Footer() {
 					<div className="flex">
 						<p className="mr-1 text-gray-800">Address:</p>
 						<Link
-							to="https://www.google.com/maps"
+							href="/"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Our address"
@@ -87,7 +87,7 @@ export default function Footer() {
 					</span>
 					<div className="flex items-center mt-1 space-x-3">
 						<Link
-							to="/"
+							href="/"
 							className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							<svg
@@ -99,7 +99,7 @@ export default function Footer() {
 							</svg>
 						</Link>
 						<Link
-							to="/"
+							href="/"
 							className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							<svg
@@ -112,7 +112,7 @@ export default function Footer() {
 							</svg>
 						</Link>
 						<Link
-							to="/"
+							href="/"
 							className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							<svg
@@ -137,7 +137,7 @@ export default function Footer() {
 				<ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
 					<li>
 						<Link
-							to="/"
+							href="/"
 							className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							F.A.Q
@@ -145,7 +145,7 @@ export default function Footer() {
 					</li>
 					<li>
 						<Link
-							to="/"
+							href="/"
 							className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							Privacy Policy
@@ -153,7 +153,7 @@ export default function Footer() {
 					</li>
 					<li>
 						<Link
-							to="/"
+							href="/"
 							className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
 						>
 							Terms &amp; Conditions

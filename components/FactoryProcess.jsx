@@ -44,7 +44,7 @@ export default function FactoryProcess() {
 			</div>
 			<div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -69,7 +69,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -93,7 +93,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -118,7 +118,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -143,7 +143,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -168,7 +168,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -192,7 +192,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -217,7 +217,7 @@ export default function FactoryProcess() {
 					</div>
 				</Link>
 				<Link
-					to="/"
+					href="/"
 					aria-label="View Item"
 					className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
 				>
@@ -244,7 +244,7 @@ export default function FactoryProcess() {
 			</div>
 			<div className="text-center">
 				<Link
-					to="/"
+					href="/"
 					className="inline-flex items-center justify-center
 					h-12 px-6 mr-6 font-medium tracking-wide text-white
 					transition duration-300 rounded shadow-md bg-red-400

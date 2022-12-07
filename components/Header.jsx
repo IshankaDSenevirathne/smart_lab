@@ -37,13 +37,13 @@ export default function Header() {
 					</p>
 					<div className="flex items-center">
 						<Link
-							to="/"
+							href="/"
 							className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-300 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
 						>
 							Get started
 						</Link>
 						<Link
-							to="/"
+							href="/"
 							aria-label=""
 							className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-300 hover:text-red-700"
 						>
