@@ -2,7 +2,9 @@ import nodemailer from 'nodemailer';
 
 const email = process.env.EMAIL;
 const password = process.env.PASSWORD;
-
+export const config = {
+	runtime: 'experimental-edge',
+};
 const handler = async (req, res) => {
 	if (req.method === 'POST') {
 		const data = req.body;
@@ -15,9 +17,12 @@ const handler = async (req, res) => {
 			!data.mobile ||
 			!data.budget
 		) {
-			return res
-				.status(400)
-				.send({ message: 'Fill in all required fields!' });
+			return new Response(JSON.stringify({ success: false }), {
+				status: 400,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
 		}
 		const transporter = nodemailer.createTransport({
 			service: 'gmail',
@@ -54,13 +59,28 @@ const handler = async (req, res) => {
 				subject: `Message from ${data.name}, ${data.organization}`,
 			});
 
-			return res.status(200).json({ success: true });
+			return new Response(JSON.stringify({ success: true }), {
+				status: 200,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
 		} catch (err) {
 			console.log(err);
-			return res.status(400).json({ error: err.message });
+			return new Response(JSON.stringify({ success: false }), {
+				status: 400,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
 		}
 	}
-	return res.status(400).json({ message: 'Method not allowed!' });
+	return new Response(JSON.stringify({ success: false }), {
+		status: 400,
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	});
 };
 
 export default handler;
